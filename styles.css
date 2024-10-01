@@ -1,0 +1,251 @@
+.container{
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer"
+ }
+
+ a{
+    text-decoration: none;
+ }
+
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 60px auto;
+    background-color: gray;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.header p{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    justify-self: end;
+    padding: 5px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color:rgba(73, 123, 134, 0.567);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-item{
+    max-width: 150px;
+    
+    
+    padding: 10px;
+    margin: 10px
+}
+
+.main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.main h2{
+    background-color: rgba(35, 48, 57, 0.47);
+}
+
+#Education-and-Work-Experience th{
+    color: blue;
+    font-size: 15pt;
+    font-family: Arial, sans-serif;
+}
+
+#Education-and-Work-Experience tbody{
+    background-color: rgb(81, 4, 81);
+    color: white;
+}
+
+.skill-set{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.skill-1{
+    grid-column-start: 1;
+}
+
+.skill-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    margin: 5px;
+    padding: 0px;
+    border-radius: 20px;
+}
+
+.skill-item:hover{
+    rotate: 360deg;
+    scale: 1.25;
+    transition-duration: 1.7s
+}
+
+.skill-set h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    background-color: rgb(21, 223, 34);
+    border-radius: 5px;
+}
+
+.project-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 100px auto;
+}
+
+.project-item h4{
+    grid-column: span 2;
+}
+
+.project-item p{
+    grid-column: span 2;
+}
+
+.project-item img{
+    background-color: red;
+    margin: 5px;
+    padding: 10px;
+}
+
+.project-item img:hover{
+    scale: 1.25;
+    transition-duration: 1s;
+}
+
+.download-link {
+    background-color: gray;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.download-link:hover{
+    font-style:italic;
+    box-shadow: 10px 5px 5px gray;
+    background-color: rgb(115, 116, 96)
+    
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    grid-area: footer;
+    background-color: lightgray;
+    margin: 0px;
+    font-size: .7rem;
+}
+
+.footer h3{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 480px) {
+    .container{
+        grid-template-columns: 100px auto;
+
+     }
+
+    .header {
+        font-size: 80%;
+    }
+
+    .sidebar{
+        max-width: 100px;
+        font-size: 80%;
+        padding: 5px;
+    }
+
+    .download-link{
+        font-size: 80%;
+    }
+
+    .main h2{
+        font-size: 80%;
+    }
+
+    #Education-and-Work-Experience th, td{
+        font-size: 80%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {  
+    .container{
+        grid-template-columns: 120px auto;
+
+     }
+
+    .header {
+        font-size: 90%;
+    }
+
+    .sidebar{
+        max-width: 120px;
+        font-size: 90%;
+        padding: 7px;
+    }
+
+    .download-link{
+        font-size: 90%;
+    }
+
+    .main h2{
+        font-size: 90%;
+    }
+
+    #Education-and-Work-Experience th, td{
+        font-size: 90%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container{
+        grid-template-columns: 200px auto;
+
+    }
+
+    .header {
+        font-size: 120%;
+    }
+
+    .sidebar{
+        max-width: 200px;
+        font-size: 120%;
+    }
+
+    .download-link{
+        font-size: 120%;
+    }
+
+    .main h2{
+        font-size: 120%;
+    }
+
+    #Education-and-Work-Experience th, td{
+        font-size: 120%;
+    }
+}
